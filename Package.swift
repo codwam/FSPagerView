@@ -1,3 +1,5 @@
+// swift-tools-version:5.1
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 //
 //  Package.swift
 //  FSPagerView
@@ -23,12 +25,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
-// swift-tools-version:5.0
 import PackageDescription
 
-let package = Package(
-    name: "FSPagerView",
-    dependencies : [],
-    exclude: []
-)
+let package = Package(name: "FSPagerView",
+                      platforms: [.iOS(.v8)],
+                      products: [.library(name: "FSPagerView",
+                                          targets: ["FSPagerView"])],
+                      targets: [.target(name: "FSPagerView",
+                                        path: "Sources")],
+                      swiftLanguageVersions: [.v5])
